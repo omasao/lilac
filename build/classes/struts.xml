@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<!--Strutsの詳細設定-->
+<struts>
+<constant name="struts.ui.theme" value="simple" />
+<constant name="struts.devMode" value="true" />
+
+
+		<package name="com.internousdev.lilac.action" extends="struts-default">
+
+
+<!--CreateUserAction-->
+<action name="CreateUserAction" class="com.internousdev.lilac.action.CreateUserAction" method="execute">
+	<result name="success">createUser.jsp</result>
+	<result name="error">home.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--CreateUserConfirmAction-->
+<action name="CreateUserConfirmAction" class="com.internousdev.lilac.action.CreateUserConfirmAction" method="execute">
+	<result name="success">createUserConfirm.jsp</result>
+	<result name="error">createUser.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--CreateUserCompleteAction-->
+<action name="CreateUserCompleteAction" class="com.internousdev.lilac.action.CreateUserCompleteAction" method="execute">
+	<result name="success">createUserComplete.jsp</result>
+	<result name="settlement">settlementConfirm.jsp</result>
+	<result name="error">createUser.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--GoLoginAction-->
+<action name="GoLoginAction" class="com.internousdev.lilac.action.GoLoginAction" method="execute">
+	<result name="success">login.jsp</result>
+	<result name="error">home.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--LoginAction-->
+<action name="LoginAction" class="com.internousdev.lilac.action.LoginAction" method="execute">
+	<result name="success">home.jsp</result>
+	<result name="settlement">settlementConfirm.jsp</result>
+	<result name="error">login.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--ResetPasswordAction-->
+<action name="ResetPasswordAction" class="com.internousdev.lilac.action.ResetPasswordAction" method="execute">
+	<result name="success">resetPassword.jsp</result>
+	<result name="error">login.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--ResetPasswordConfirmAction-->
+<action name="ResetPasswordConfirmAction" class="com.internousdev.lilac.action.ResetPasswordConfirmAction" method="execute">
+	<result name="success">resetPasswordConfirm.jsp</result>
+	<result name="error">resetPassword.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--ResetPasswordCompleteAction-->
+<action name="ResetPasswordCompleteAction" class="com.internousdev.lilac.action.ResetPasswordCompleteAction" method="execute">
+	<result name="success">resetPasswordComplete.jsp</result>
+	<result name="error">resetPassword.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--ProductListAction-->
+<action name="ProductListAction" class="com.internousdev.lilac.action.ProductListAction" method="execute">
+	<result name="success">productList.jsp</result>
+	<result name="error">home.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--ProductDetailsAction-->
+<action name="ProductDetailsAction" class="com.internousdev.lilac.action.ProductDetailsAction" method="execute">
+	<result name="success">productDetails.jsp</result>
+	<result name="error">productList.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!-- SearchItemAction -->
+<action name="SearchItemAction" class="com.internousdev.lilac.action.SearchItemAction" method="execute">
+	<result name="success">productList.jsp</result>
+	<result name="error">productList.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--HomeAction-->
+<action name="HomeAction" class="com.internousdev.lilac.action.HomeAction" method="execute">
+	<result name="success">home.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--AddCartAction-->
+<action name="AddCartAction" class="com.internousdev.lilac.action.AddCartAction" method="execute">
+	<interceptor-ref name="defaultStack"/>
+	<interceptor-ref name="token"/>
+	<result name="invalid.token">cart.jsp</result>
+	<result name="success">cart.jsp</result>
+	<result name="error">home.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--CartAction-->
+<action name="CartAction" class="com.internousdev.lilac.action.CartAction" method="execute">
+	<result name="success">cart.jsp</result>
+	<result name="error">home.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--DeleteCartAction-->
+<action name="DeleteCartAction" class="com.internousdev.lilac.action.DeleteCartAction" method="execute">
+	<result name="success">cart.jsp</result>
+	<result name="error">cart.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--SettlementConfirmAction-->
+<action name="SettlementConfirmAction" class="com.internousdev.lilac.action.SettlementConfirmAction" method="execute">
+	<result name="success">settlementConfirm.jsp</result>
+	<result name="error">login.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--CreateDestinationAction-->
+<action name="CreateDestinationAction" class="com.internousdev.lilac.action.CreateDestinationAction" method="execute">
+	<result name="success">createDestination.jsp</result>
+	<result name="error">home.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--CreateDestinationCofirmAction-->
+<action name="CreateDestinationConfirmAction" class="com.internousdev.lilac.action.CreateDestinationConfirmAction" method="execute">
+	<result name="success">createDestinationConfirm.jsp</result>
+	<result name="error">createDestination.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--CreateDestinationCompleteAction-->
+<action name="CreateDestinationCompleteAction" class="com.internousdev.lilac.action.CreateDestinationCompleteAction" method="execute">
+	<interceptor-ref name="defaultStack"/>
+	<interceptor-ref name="token"/>
+	<result name="invalid.token">home.jsp</result>
+	<result name="success">createDestinationComplete.jsp</result>
+	<result name="error">createDestination.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--SettlementCompleteAction-->
+<action name="SettlementCompleteAction" class="com.internousdev.lilac.action.SettlementCompleteAction" method="execute">
+	<interceptor-ref name="defaultStack"/>
+	<interceptor-ref name="token"/>
+	<result name="invalid.token">home.jsp</result>
+	<result name="success">settlementComplete.jsp</result>
+	<result name="error">settlementConfirm.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--MyPageAction-->
+<action name="MyPageAction" class="com.internousdev.lilac.action.MyPageAction" method="execute">
+	<result name="success">mypage.jsp</result>
+	<result name="error">home.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--PurchaseHistoryAction-->
+<action name="PurchaseHistoryAction" class="com.internousdev.lilac.action.PurchaseHistoryAction" method="execute">
+	<result name="success">purchaseHistory.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--DeletePurchaseHistoryAction-->
+<action name="DeletePurchaseHistoryAction" class="com.internousdev.lilac.action.DeletePurchaseHistoryAction" method="execute">
+	<result name="success">purchaseHistory.jsp</result>
+	<result name="error">home.jsp</result>
+	<result name="timeout">error.jsp</result>
+	</action>
+
+
+<!--LogoutAction-->
+<action name="LogoutAction" class="com.internousdev.lilac.action.LogoutAction" method="execute">
+	<result name="success">index.jsp</result>
+	<result name="error">index.jsp</result>
+	<result name="timeout">index.jsp</result>
+	</action>
+
+
+		</package>
+</struts>
